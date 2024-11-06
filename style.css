@@ -1,0 +1,333 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    position: relative;
+    width: calc(1060px + 45px);
+    max-width: 100%;
+    background-color: var(--outerBackground);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+/* Header styling */
+.header {
+    background-color: #3f51b5;
+    padding: 1rem;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 3px;
+    font-weight: 900;
+    transition: all .17s ease;
+}
+
+
+.nav-links li a:hover {
+    color: #000000;
+    background-color: red;
+    padding: 10px;
+  }
+
+.search-box {
+    padding: 0.5rem;
+    font-size: 18px;
+    border-radius: 4px;
+    border: none;
+}
+
+/* Logo image styling */
+.logo-img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: 40px;
+}
+
+
+/* Logo styling with custom font */
+.logo {
+    font-family: 'Battambang', sans-serif;
+    font-size: 1.8rem; /* Adjust the size as needed */
+    color: #ffffff; /* Logo text color */
+    font-weight: 700; /* Font weight to match selected style */
+}
+
+
+/* Featured news section */
+.featured-news {
+    background-color: #f5f5f5;
+    padding: 1rem;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    color: white;
+}
+.carousel-item {
+    display: none; /* Hide all items initially */
+    position: relative;
+    transition: opacity 1s ease-in-out;
+}
+
+.carousel-item.active {
+    display: block; /* Only the active item will be shown */
+}
+
+
+/* Latest news grid */
+.latest-news {
+    padding: 1rem;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Adjust columns based on layout */
+    gap: 1rem;
+}
+
+.news-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.news-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.5rem;
+}
+
+.news-caption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 0.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.news-caption h3 {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.news-caption p {
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.news-header h2 {
+    margin: 0;
+}
+
+.news-header h2:before {display: grid;content: '';height: 3px;background: #006aff;}
+.news-header h2:after {display: grid;content: '';height: 3px;background: red;}
+
+.view-all-btn {
+    text-decoration: none;
+    color: #d32f2f; /* Customize color as desired */
+    font-weight: bold;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.view-all-btn:hover {
+    color: #b71c1c; /* Darken color on hover */
+}
+
+.news-link {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color from parent elements */
+}
+
+.news-item:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Add a hover effect for visual feedback */
+    transform: translateY(-3px); /* Slight lift on hover */
+    transition: all 0.3s ease;
+}
+
+
+/* Footer styling */
+.footer {
+    background-color: #3f51b5;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+/* start: Slider */
+.wrapper {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+}
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #3f51b5;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
+.arrow:hover {
+    background-color: rgba(0, 0, 0, .7);
+}
+.arrow.prev {
+    left: 0;
+    font-size: 40px;
+    border-radius: 5px 0 0 5px;
+}
+.arrow.next {
+    right: 0;
+    font-size: 40px;
+    border-radius: 0 5px 5px 0;
+}
+.card-wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / 1) - 1px);
+    overflow-x: auto;
+    padding: 1rem;
+    gap: 30px;
+    cursor: grab;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 15px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+.card-wrapper::-webkit-scrollbar {
+    display: none;
+}
+.card-wrapper.grab {
+    cursor: grabbing;
+    user-select: none;
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+.card-wrapper.no-smooth {
+    scroll-behavior: auto;
+}
+.card-item {
+    scroll-snap-align: start;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 8px 8px 24px rgba(0, 0, 0, .1);
+}
+.card-item img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+}
+.card-info {
+    padding: 16px;
+}
+.card-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: inline-block;
+    font-size: 20px;
+    text-decoration: none;
+    color: #222;
+}
+.card-title:hover {
+    color: #006aff;
+}
+.card-description {
+    color: #888;
+}
+/* end: Slider */
+
+
+
+@media screen and (max-width: 575px) {
+    .arrow {
+        display: none;
+    }
+    .card-wrapper {
+        margin-left: -16px;
+        width: 100vw;
+        grid-auto-columns: 100%;
+    }
+}
+
+
+#myBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 4px;
+  }
+  
+  #myBtn:hover {
+    background-color: #555;
+  }
