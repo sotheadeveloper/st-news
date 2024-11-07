@@ -33,14 +33,15 @@ body {
     text-decoration: none;
     padding: 5px;
     border-radius: 3px;
-    font-weight: 900;
+    font-weight: 700;
     transition: all .17s ease;
+    font-family: 'Koulen', Arial, Helvetica, sans-serif;
+    font-size: 20px;
 }
 
 
 .nav-links li a:hover {
     color: #000000;
-    background-color: red;
     padding: 10px;
   }
 
@@ -155,25 +156,49 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 0 10px;
 }
 
 .news-header h2 {
     margin: 0;
+    font-family: 'Koulen', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-color: #e53935; /* Red background color */
+    color: #fff;
+    padding: 7px 45px 7px 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 100% 100%, 0 100%);
 }
 
-.news-header h2:before {display: grid;content: '';height: 3px;background: #006aff;}
-.news-header h2:after {display: grid;content: '';height: 3px;background: red;}
+
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #e53935; /* Same red color */
+}
 
 .view-all-btn {
     text-decoration: none;
-    color: #d32f2f; /* Customize color as desired */
+    color: #d32f2f;
     font-weight: bold;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
 
 .view-all-btn:hover {
-    color: #b71c1c; /* Darken color on hover */
+    color: black;
+    padding: 10px;
+    transition: all 0.3s ease;
 }
 
 .news-link {
@@ -190,12 +215,32 @@ body {
 
 /* Footer styling */
 .footer {
-    background-color: #3f51b5;
+    background-color: #333;
     color: white;
+    padding: 20px;
     text-align: center;
-    padding: 1rem;
+    font-family: Arial, sans-serif;
 }
 
+.footer p {
+    margin: 0;
+    padding: 10px 0;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #038d01; /* Change to a color you prefer */
+}
 
 
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
@@ -204,6 +249,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-decoration: none;
 }
 
 
@@ -331,3 +377,69 @@ body {
   #myBtn:hover {
     background-color: #555;
   }
+
+
+      /* Grid container */
+      .sports-container {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    /* Card styling */
+    .sports-card {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sports-image {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .sports-image:hover {
+        transform: translateY(-3px); /* Slight lift on hover */
+    transition: all 0.3s ease;
+    }
+
+    .sports-content {
+        padding: 15px;
+    }
+
+    .category {
+        background-color: #038d01;
+        color: white;
+        font-size: 0.8rem;
+        font-weight: bold;
+        padding: 4px 8px;
+        border-radius: 4px;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .news-info {
+        font-size: 0.75rem;
+        color: #888;
+        margin-bottom: 8px;
+    }
+
+    .news-title {
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+
+    .news-title a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .news-title a:hover {
+        color: #038d01;
+    }
