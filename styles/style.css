@@ -1,3 +1,37 @@
+/*-- CSS Variables --*/
+:root{
+    --bodyFont:'Poppins','Noto Serif Khmer',sans-serif;
+    --titleFont:'Poppins','Bayon',sans-serif;
+    --fontAwesomeBrands:'Font Awesome 6 Brands';
+    --fontAwesomeFree:'Font Awesome 6 Free';
+    --materialSymbolsRounded:'Material Symbols Rounded';
+    --bodyBackground:$(body.background);
+    --bodyBackgroundColor:#f6f8fa;
+    --outerBackground:#ffffff;
+    --headerBackground:#111111;
+    --subMenuBackground:#ffffff;
+    --subMenuColor:#111111;
+    --slideMenuBackground:#010101;
+    --mobileMenuBackground:#ffffff;
+    --mobileMenuColor:#111111;
+    --headingTitleBackground:#212121;
+    --footerBackground:#080808;
+    --footerTextColor:#bababa;
+    --footerBarBackground:#0c0c0c;
+    --titleColor:$(body.title.color);
+    --textColor:$(body.text.color);
+    --mainColor:$(main.color);
+    --mainColorLight:$(main.color)20;
+    --metaColor:#aaaaaa;
+    --whiteColor:#ffffff;
+    --yellowColor:#ffc107;
+    --darkBackground:#111111;
+    --borderColor:rgba(155,155,155,0.19);
+    --mainBackground:#ffffff;
+    --mainShadow:0 1px 3px rgba(0,0,0,0.17);
+    --titleColor:#333;
+    }
+
 /* Global styles */
 body {
     font-family: Arial, sans-serif;
@@ -41,7 +75,7 @@ body {
 
 
 .nav-links li a:hover {
-    color: #000000;
+    color: #ffffff44;
     padding: 10px;
   }
 
@@ -166,7 +200,7 @@ body {
     margin: 0;
     font-family: 'Koulen', Arial, Helvetica, sans-serif;
     font-size: 20px;
-    background-color: #e53935; /* Red background color */
+    background-color: #e53935;
     color: #fff;
     padding: 7px 45px 7px 15px;
     font-weight: bold;
@@ -176,15 +210,48 @@ body {
     clip-path: polygon(0 0, 70% 0, 100% 100%, 100% 100%, 0 100%);
 }
 
-
-
 .underline {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
     height: 7px;
-    background-color: #e53935; /* Same red color */
+    background-color: #e53935;
+}
+
+/* Sports Styles */
+.sports-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 0 10px;
+}
+
+.sports-header h2 {
+    margin: 0;
+    font-family: 'Koulen', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-color: #16A34A;
+    color: #fff;
+    padding: 7px 45px 7px 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    position: relative;
+    clip-path: polygon(0 0, 70% 0, 100% 100%, 100% 100%, 0 100%);
+}
+
+.sports-underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 7px;
+    background-color: #16A34A;
 }
 
 .view-all-btn {
@@ -196,7 +263,7 @@ body {
 }
 
 .view-all-btn:hover {
-    color: black;
+    color: #d32f2f7c;
     padding: 10px;
     transition: all 0.3s ease;
 }
@@ -379,67 +446,287 @@ body {
   }
 
 
-      /* Grid container */
-      .sports-container {
-        display: grid;
-        gap: 15px;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
+/* Grid container styling */
+.big-sports-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
 
-    /* Card styling */
-    .sports-card {
-        background-color: white;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-    }
+.big-sports-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
 
-    .sports-image {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-
-    .sports-image:hover {
-        transform: translateY(-3px); /* Slight lift on hover */
+.big-sports-card:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
     transition: all 0.3s ease;
-    }
+}
 
-    .sports-content {
-        padding: 15px;
-    }
+.big-sports-card__image {
+    width: 100%;
+    height: auto;
+}
 
-    .category {
-        background-color: #038d01;
-        color: white;
-        font-size: 0.8rem;
-        font-weight: bold;
-        padding: 4px 8px;
-        border-radius: 4px;
-        display: inline-block;
-        margin-bottom: 10px;
-    }
+.big-sports-card__content {
+    padding: 16px;
+}
 
-    .news-info {
-        font-size: 0.75rem;
-        color: #888;
-        margin-bottom: 8px;
-    }
+.big-sports-card__tag {
+    display: inline-block;
+    background-color: #16A34A;
+    color: white;
+    padding: 4px 8px;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
 
-    .news-title {
-        font-size: 1rem;
-        color: #333;
-        line-height: 1.4;
-        margin-bottom: 10px;
-    }
+.big-sports-card__title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 8px 0;
+}
 
-    .news-title a {
-        text-decoration: none;
-        color: inherit;
-    }
+.big-sports-card__description {
+    font-size: 14px;
+    color: #555555;
+    margin-bottom: 12px;
+}
 
-    .news-title a:hover {
-        color: #038d01;
-    }
+.big-sports-card__meta {
+    font-size: 12px;
+    color: #999999;
+}
+
+
+/* Grid container styling */
+.small-sports-card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    padding: 0 16px 16px;
+}
+
+/* Base styles for the card container */
+.small-sports-card {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin: 10px 0;
+}
+
+.small-sports-card:hover {
+    transform: translateY(-3px); /* Slight lift on hover */
+    transition: all 0.3s ease;
+}
+
+/* Image styling */
+.small-sports-card__image {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Content container styling */
+.small-sports-card__content {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Title styling */
+.small-sports-card__title {
+    font-size: .75rem;
+    line-height: 1rem;
+    margin: 0;
+    color: #333;
+}
+
+/* Description styling (optional) */
+.small-sports-card__description {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 8px;
+}
+
+
+
+/* Styling for the featured card */
+.featured-card {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.featured-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.featured-card .card-text {
+    position: absolute;
+    bottom: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Grid for smaller cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.small-card {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.small-card img {
+    width: 100%;
+    height: auto;
+}
+
+.small-card .card-text {
+    padding: 10px;
+}
+
+/* Text styling */
+.card-text h2, .card-text h3 {
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.card-text2 {
+    margin-bottom: 5px;
+    color: var(--titleColor);
+}
+
+.card-text p {
+    color: #666;
+    font-size: 0.9em;
+}
+
+
+.lifestyle-layout-container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.lifestyle-grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+}
+
+.lifestyle-featured-article {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    width: 100%;
+}
+
+.featured-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lifestyle-category-label {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    background-color: #ffc107;
+    padding: 5px 10px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.article-overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    padding: 20px;
+}
+
+.article-text {
+    color: white;
+}
+
+.article-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.article-description {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.lifestyle-related-articles {
+    display: grid;
+    gap: 10px;
+}
+
+.related-article-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.related-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.related-text {
+    padding: 10px;
+    color: var(--titleColor)
+}
+
+.small-category-label {
+    font-size: 12px;
+    background-color: #ffc107;
+    padding: 3px 8px;
+    border-radius: 4px;
+    width: 83px;
+}
+
+.article-meta {
+    font-size: 10px;
+    margin-top: 4px;
+}
+
+.related-description {
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+
